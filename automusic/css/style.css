@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+* {
+  font-family: "Noto Sans JP";
+}
+
+/* 共通
+---------------------------------- */
+
+h1 {
+  font-size: 24px;
+}
+
+.btn {
+  width: 150px;
+  height: 36px;
+  border-radius: 4px;
+}
+
+.decision-btn {
+  color: #fff;
+  background-color: #1d55bf;
+}
+
+/* index.html
+---------------------------------- */
+
+#Top h1 {
+  color: #1d55bf;
+  margin-bottom: 40px;
+}
+
+#Top .sub-title {
+  font-size: 20px;
+}
+
+
+
+#Top .modal {
+  /*display: none;*/
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #b4afaf;
+}
+
+#Top .modal-content {
+  width: 260px;
+  /*    margin: 50px auto;*/
+  padding: 40px 20px 50px;
+  background-color: #fff;
+  border: 1px;
+  text-align: center;
+  box-shadow: 0 12px 20px 4px #9b9b9b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#Top .mynumber-area {
+  margin: 20px auto 60px;
+  font-size: 16px;
+  color: #717374;
+  text-align: left;
+}
+
+#Top .mynumber-area p {
+  margin-bottom: 5px;
+}
+
+#Top .class-number {
+  margin-bottom: 10px;
+}
+
+#Top .mynumber-area select {
+
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  color: #717374;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+#Top .mynumber-area .select-wrap {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+#Top .mynumber-area .select-wrap::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-bottom: solid 2px #717374;
+  border-right: solid 2px #717374;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin-top: -4px;
+}
