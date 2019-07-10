@@ -21,6 +21,10 @@ h1 {
   background-color: #1d55bf;
 }
 
+.inner{
+    padding: 40px 0;
+}
+
 /* index.html
 ---------------------------------- */
 
@@ -107,3 +111,63 @@ h1 {
   right: 25px;
   margin-top: -4px;
 }
+
+#Top .resultList{
+  width: 80%;
+  margin: 43 auto;
+  max-width: 500px;
+  
+}
+
+#Top .resultList h2{
+    font-size: 22px;
+    text-align: center;
+}
+
+
+#Top .resultList audio{
+    text-align: center;
+}
+
+#Top .resultList p{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 18px;
+}
+
+#Top .card{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#Top .major{
+    background-color: #ffeacf;
+}
+
+#Top .music-elements{
+}
+
+#Top .music-info{
+    width: 140px;
+    display: inline-block;
+    
+}
+
+#Top .used-music-list{
+    background-color: #fff;
+    width: 80%;
+}
+
+
+#Top .downloader{
+    display: inline-block;
+    width: 150px;
+}
+
+#Top .downloader a{
+    display: inline-block;
+    width: 70px;
+}
+
+

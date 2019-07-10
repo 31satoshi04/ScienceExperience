@@ -1,75 +1,115 @@
 <!DOCUTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1,width=device-width">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-  <title>MusicComposer download page</title>
+    <title>MusicComposer download page</title>
 
 </head>
 
 <body id="Top">
-  <div id="modal" class="modal">
-    <!--モーダルウィンドウ-->
-    <div class="modal-content">
-      <!--四角の表示ウィンドウ-->
-      <h1>大谷研究室<br>
-        <span class="sub-title">ダウンロードフォーム</span>
-      </h1>
-      
-      <div class="mynumber-area">
-       
-        <div class="class-number">
-          <p>授業回数</p>
-          <div class="select-wrap">
-            <select name="selectClassTimes">
-              <!--授業回数のプルダウンメニュー-->
-              <option value="1">第１回</option>
-              <option value="2">第２回</option>
-              <option value="3">第３回</option>
-              <option value="4">第４回</option>
-              <option value="5">第５回</option>
-              <option value="6">第６回</option>
-            </select>
-          </div>
+    <div class="inner">
+
+        <div id="modal" class="modal">
+            <!--モーダルウィンドウ-->
+            <div class="modal-content">
+                <!--四角の表示ウィンドウ-->
+                <h1>大谷研究室<br>
+                    <span class="sub-title">ダウンロードフォーム</span>
+                </h1>
+
+                <div class="mynumber-area">
+
+                    <div class="class-number">
+                        <p>授業回数</p>
+                        <div class="select-wrap">
+                            <select name="selectClassTimes">
+                                <!--授業回数のプルダウンメニュー-->
+                                <option value="0">第０回</option>
+                                <option value="1">第１回</option>
+                                <option value="2">第２回</option>
+                                <option value="3">第３回</option>
+                                <option value="4">第４回</option>
+                                <option value="5">第５回</option>
+                                <option value="6">第６回</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="seat-number">
+                        <p>座席番号</p>
+                        <div class="select-wrap">
+                            <select name="selectSeatNumber">
+                                <!--座席番号のプルダウンメニュー-->
+                                <option value="0">０</option>
+                                <option value="1">１</option>
+                                <option value="2">２</option>
+                                <option value="3">３</option>
+                                <option value="4">４</option>
+                                <option value="5">５</option>
+                                <option value="6">６</option>
+                                <option value="7">７</option>
+                                <option value="8">８</option>
+                                <option value="9">９</option>
+                                <option value="10">１０</option>
+                                <option value="11">１１</option>
+                                <option value="12">１２</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button id="decision-btn" class="btn decision-btn">決定</button>
+            </div>
         </div>
-        
-        <div class="seat-number">
-          <p>座席番号</p>
-          <div class="select-wrap">
-            <select name="selectSeatNumber">
-              <!--座席番号のプルダウンメニュー-->
-              <option value="1">１</option>
-              <option value="2">２</option>
-              <option value="3">３</option>
-              <option value="4">４</option>
-              <option value="5">５</option>
-              <option value="6">６</option>
-              <option value="7">７</option>
-              <option value="8">８</option>
-              <option value="9">９</option>
-              <option value="10">１０</option>
-              <option value="11">１１</option>
-              <option value="12">１２</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <button id="decision-btn" class="btn decision-btn">決定</button>
+
+
+        <ul>
+            <li class="card major">
+                <h1>保存時につけたタイトル</h1>
+                <div class="music-player">
+                    <audio controls src="src/Win.mp3" controlslist="nodownload">
+                    </audio>
+                </div>
+                <div class="music-elements">
+
+                    <div class="music-info">
+                        <p>作曲に使った曲</p>
+                        <ul class="used-music-list">
+                            <li>さんぽ
+                            </li>
+                            <li>銀河鉄道９９９
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="downloader">
+
+                    <a id="download-PDF-btn"><img src="../img/PDF_icon.svg">
+                        <p>PDF</p>
+                    </a>
+
+                    <a id="download-music-btn"><img src="../img/download_icon.svg">
+                        <p> mp3</p>
+                    </a>
+                        
+                    </div>
+                    
+                </div>
+            </li>
+        </ul>
+
     </div>
-  </div>
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services-->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
-    
-  <!-- Add Firebase products that you want to use -->
-  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/5.10.1/firebase-storage.js"></script>
-  
-  <script defer src="./js/init-firebase.js"></script>
-  <script src="./js/script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-storage.js"></script>
+
+    <script src="./js/init-firebase.js"></script>
+    <script src="./js/script.js"></script>
 </body></html>
