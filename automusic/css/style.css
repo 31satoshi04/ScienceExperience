@@ -1,27 +1,28 @@
 @charset "UTF-8";
 
 * {
-  font-family: "Noto Sans JP";
+    font-family: "Noto Sans JP";
+    color: #4A4949;
 }
 
 /* 共通
 ---------------------------------- */
 h1 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 .btn {
-  width: 150px;
-  height: 36px;
-  border-radius: 4px;
+    width: 150px;
+    height: 36px;
+    border-radius: 4px;
 }
 
 .decision-btn {
-  color: #fff;
-  background-color: #1d55bf;
+    color: #fff;
+    background-color: #1d55bf;
 }
 
-.inner{
+.inner {
     padding: 40px 0;
 }
 
@@ -29,175 +30,187 @@ h1 {
 ---------------------------------- */
 
 #Top h1 {
-  color: #1d55bf;
-  margin-bottom: 40px;
+    color: #1d55bf;
+    margin-bottom: 40px;
 }
 
 #Top .sub-title {
-  font-size: 20px;
+    font-size: 20px;
+    color: #1d55bf
 }
 
 
 
 #Top .modal {
-  /*display: none;*/
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: #b4afaf;
+    /*display: none;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #b4afaf;
 }
 
 #Top .modal-content {
-  width: 260px;
-  /*    margin: 50px auto;*/
-  padding: 40px 20px 50px;
-  background-color: #fff;
-  border: 1px;
-  text-align: center;
-  box-shadow: 0 12px 20px 4px #9b9b9b;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    width: 260px;
+    /*    margin: 50px auto;*/
+    padding: 40px 20px 50px;
+    background-color: #fff;
+    border: 1px;
+    text-align: center;
+    box-shadow: 0 12px 20px 4px #9b9b9b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #Top .mynumber-area {
-  margin: 20px auto 60px;
-  font-size: 16px;
-  color: #717374;
-  text-align: left;
+    margin: 20px auto 60px;
+    font-size: 16px;
+    color: #717374;
+    text-align: left;
 }
 
 #Top .mynumber-area p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 #Top .class-number {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #Top .mynumber-area select {
 
-  width: 100%;
-  height: 50px;
-  padding: 10px 20px;
-  color: #717374;
-  background: transparent;
-  -webkit-appearance: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    color: #717374;
+    background: transparent;
+    -webkit-appearance: none;
 }
 
 #Top .mynumber-area .select-wrap {
-  width: 100%;
-  position: relative;
-  display: inline-block;
+    width: 100%;
+    position: relative;
+    display: inline-block;
 }
 
 #Top .mynumber-area .select-wrap::after {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border: 0;
-  border-bottom: solid 2px #717374;
-  border-right: solid 2px #717374;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  right: 25px;
-  margin-top: -4px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-bottom: solid 2px #717374;
+    border-right: solid 2px #717374;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    margin-top: -4px;
 }
 
-#Top .resultList{
-  width: 80%;
-  margin: 43 auto;
-  max-width: 500px;
-
-}
-
-#Top .resultList h2{
-    font-size: 22px;
-    text-align: center;
-}
-
-
-#Top .resultList audio{
-    text-align: center;
-}
-
-#Top .resultList p{
-    font-size: 14px;
-    margin-left: 20px;
-    margin-top: 18px;
-}
-
-
-#top .card h1{
-  color: #383839;
-  margin: 0 auto;
-}
-
-#Top .card{
-    width: 85%;
-    height: 230px;
+#top .card h1 {
+    font-weight: normal;
+    color: #383839;
     margin: 0 auto;
-    box-shadow: 0 12px 20px 4px #9b9b9b;
 }
 
-
-#Top .major{
-    background-color: #ffeacf;
+#Top .card {
+    width: 300px;
+    height: 230px;
+    margin: 0px auto;
     padding: 15px 13px;
+    box-shadow: 0 12px 26px 2px #ddd;
 }
 
-#Top .music-player audio{
+#Top .card + .card {
+    margin-top: 40px;
+}
+
+#Top .major {
+    background-color: #ffeacf;
+}
+
+#Top .mainor {
+    background-color: #CFE4FF;
+}
+
+#Top .music-player audio {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 50px;
     margin: 10px auto 0;
 }
 
-#Top .music-elements{
-  margin-top: 20px;
+#Top .music-elements {
+    margin-top: 20px;
 }
 
-#Top .music-info{
+#Top .music-info {
     width: 150px;
     display: inline-block;
 }
 
-#Top .music-info p{
-  font-size: 14px;
+#Top .music-info p {
+    font-size: 14px;
 }
 
-#Top .used-music-list{
+
+#Top .used-music-list {
     background-color: #fff;
-    width: 148px;
-    height: 60px;
+    width: 150px;
+    height: px;
     font-size: 14px;
     border: 2px;
     padding: 6px;
+    overflow-y: scroll;
+    border: solid 1px;
+    border-color: grey;
+    margin-top: 5px;
 }
 
+#Top .used-music-list li {
+    margin-left: 10px;
+}
 
-#Top .downloader{
-    display: inline-block;
-    width: 139px;
+#Top .used-music-list li::before {
     position: relative;
-    padding-left: 15px;
-    padding-top: 20px;
+    top:-4px;
+    left: -4px;
+    display: inline-block;
+
+    width: 3px;
+    height: 3px;
+
+    content: '';
+    background: #4A4949;
 }
 
 
-#Top .downloader a{
+
+#Top .downloader {
+    display: inline-block;
+    width: 100px;
+    position: elative;
+    margin-left: 15px;
+    height: 60px;
+    vertical-align: bottom;
+}
+
+#Top .downloader a {
     display: inline-block;
 }
 
-#Top .downloader p{
-  width: 30px;
-  margin: 0 auto;
+#Top .downloader a + a {
+    margin-left: 20px;
+}
+
+#Top .downloader p {
+    width: 30px;
+    margin: 0 auto;
 }
