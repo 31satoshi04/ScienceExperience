@@ -116,7 +116,7 @@ h1 {
   width: 80%;
   margin: 43 auto;
   max-width: 500px;
-  
+
 }
 
 #Top .resultList h2{
@@ -135,39 +135,69 @@ h1 {
     margin-top: 18px;
 }
 
+
+#top .card h1{
+  color: #383839;
+  margin: 0 auto;
+}
+
 #Top .card{
-    width: 80%;
+    width: 85%;
+    height: 230px;
     margin: 0 auto;
+    box-shadow: 0 12px 20px 4px #9b9b9b;
 }
 
 
 #Top .major{
     background-color: #ffeacf;
+    padding: 15px 13px;
+}
+
+#Top .music-player audio{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: 10px auto 0;
 }
 
 #Top .music-elements{
+  margin-top: 20px;
 }
 
 #Top .music-info{
-    width: 140px;
+    width: 150px;
     display: inline-block;
-    
+}
+
+#Top .music-info p{
+  font-size: 14px;
 }
 
 #Top .used-music-list{
     background-color: #fff;
-    width: 80%;
+    width: 148px;
+    height: 60px;
+    font-size: 14px;
+    border: 2px;
+    padding: 6px;
 }
 
 
 #Top .downloader{
     display: inline-block;
-    width: 150px;
+    width: 139px;
+    position: relative;
+    padding-left: 15px;
+    padding-top: 20px;
 }
+
 
 #Top .downloader a{
     display: inline-block;
-    width: 70px;
 }
 
-
+#Top .downloader p{
+  width: 30px;
+  margin: 0 auto;
+}

@@ -12,3 +12,7 @@ button {
 li {
     list-style: none;
 }
+
+#Top .downloader a{
+  margin: 0;
+}
