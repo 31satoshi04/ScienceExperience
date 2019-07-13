@@ -164,13 +164,13 @@ h1 {
 #Top .used-music-list {
     background-color: #fff;
     width: 150px;
-    height: px;
+    height: 60px;
     font-size: 14px;
     border: 2px;
     padding: 6px;
     overflow-y: scroll;
     border: solid 1px;
-    border-color: grey;
+    border-color: #b7b7b7;
     margin-top: 5px;
 }
 
