@@ -1,4 +1,3 @@
-
 // 決定ボタンクリックイベントリスナー
 // =========================================================
 
@@ -6,19 +5,14 @@ const decision_btn = document.getElementById("decision-btn");
 decision_btn.addEventListener("click", async function () {
     const modal_window = document.getElementById("modal");
 
-    // 授業回数取得
+    // 授業回数及び座席番号取得
     const class_time = document.querySelector('.class-number select').value;
-    // console.log(class_time);
-
-    // 座席番号取得
     const seat_number = document.querySelector('.seat-number select').value;
-    // console.log(seat_number);
 
     // DBから、作成した楽曲情報を取得
     const created_music_info = await db.collection(`work0`).doc(`seat0`).get().then(function (snapshot) {
         return new Promise((resolve, reject) => {
             if (snapshot.exists) {
-                console.log(snapshot.data());
                 resolve(snapshot.data());
             } else {
                 // 該当パスに値がない時
@@ -28,33 +22,31 @@ decision_btn.addEventListener("click", async function () {
         });
     }, function (error) {
         // DBへのアクセス権限がないとき or 無効クエリの時
-        console.error(`Error getting document:${error}`);
-
+        console.error(`Error: getting document:${error}`);
     });
 
     // DOM作成
     let music_list_DOM = '';
-    Object.values(created_music_info)[0].forEach(async function (card_info) {
-        console.log("loop");
-        console.log(card_info);
-
-        storage.ref('MP3/work0/seat0/1.mp3').getDownloadURL().then(function (url) {
-            console.log(url);
-            music_list_DOM += createMuscListDOM(card_info, url);
+    Object.values(created_music_info)[0].forEach(async function (card_info, index) {
+        const song_tone = card_info.song_tone;
+        console.log(index);
+        // storage.ref(`MP3/work${class_time}/seat${seat_number}/${index}.mp3`).getDownloadURL().then(function (url) {
+        storage.ref(`MP3/work0/seat0/1.mp3`).getDownloadURL().then(function (url) {
+            music_list_DOM = createMuscListDOM(card_info, url);
         }).then(function () {
-            document.querySelector(`#Top ul`).innerHTML = music_list_DOM;
+            const ul = document.querySelector(`#Top ul`)
+            const cards = document.createElement('li');
+
+            cards.classList.add('card');
+            cards.classList.add(song_tone);
+            cards.innerHTML = music_list_DOM;
+
+            ul.appendChild(cards);
         });
     });
 
-    // 作成したDOMを挿入
-    console.log(music_list_DOM);
-    document.querySelector(`#Top ul`).innerHTML = music_list_DOM;
-
     // モーダルウィンドウを取り除く
-    const parent = modal_window.parentNode;
-    parent.removeChild(modal_window);
-
-    // const music_info = getCreatedMusicInfo(class_time, seat_number);
+    modal_window.parentNode.removeChild(modal_window);
 });
 
 
@@ -63,19 +55,17 @@ decision_btn.addEventListener("click", async function () {
 
 /**
  * 作られた曲リストのDOMを生成
- * @param {object} music_info:作成した音楽のデータが入ったオブジェクト
+ * @param {object} music_info: 作成した音楽のデータが入ったオブジェクト
  * @return {string} cards_element: 作られた曲リストのDOM（文字列）
  */
 function createMuscListDOM(music_info, mp3_url) {
     //作った音楽の情報。(HTML)
     let card_elements = ``;
     const song_name = music_info.song_name;
-    const song_tone = music_info.song_tone;
     const used_song_list = music_info.used_song;
 
     // DOM生成
-    card_elements += `
-    <li class="card ${song_tone}">
+    card_elements = `
       <h1>${song_name}</h1>
       <div class="music-player">
         <audio controls src="${mp3_url}" controlslist="nodownload"></audio>
@@ -89,65 +79,15 @@ function createMuscListDOM(music_info, mp3_url) {
         `</ul>
         </div>
         <div class="downloader">
-          <a id="download-PDF-btn"><img src="./img/PDF_icon.svg">
+          <a id="download-PDF-btn">
+            <img src="./img/PDF_icon.svg">
             <p>PDF</p>
           </a>
-          <a id="download-music-btn"><img src="./img/download_icon.svg">
+          <a id="download-music-btn" href="${mp3_url}">
+            <img src="./img/download_icon.svg">
             <p>MP3</p>
           </a>
         </div>
-       </div>
-     </li>`;
-
+       </div>`;
     return card_elements;
-}
-
-
-
-/**
- *fire baseからデータベースの内容を取得
- *@param{int}class_time：授業回数
- *@param{int}seat_number:座席番号
- *@param{string}mp3_url:MP3ファイルのURL
- */
-async function getCreatedMusicInfo(class_time, seat_number) {
-    //参照及び取得
-    const music_info_ref = db.collection(`work0`).doc(`seat0`);
-    await music_info_ref.onSnapshot(function (snapshot) {
-        return new Promise((resolve, reject) => {
-
-            if (snapshot.exists) {
-                console.log(snapshot.data());
-                resolve(snapshot.data());
-            } else {
-                //値がない時のエラー
-                console.log(`データがありません: ${snapshot.data()}`);
-                reject;
-            }
-        });
-    }, function (error) {
-        //権限がないときか無効のQueryの時のエラー
-        console.error(`Error getting document:${error}`);
-
-    });
-
-};
-
-/**
- * CloudfireStorageから楽譜をダウンロードする
- * @param {int} class_time： 授業回数
- * @param {int} seat_number: 座席番号
- */
-
-async function getMP3URL(class_time, seat_number) {
-    //        const path_mp3 = storage.ref(`MP3/work${class_time}/seat${seat_number}/1.mp3/`);
-    const path_mp3 = storage.ref('MP3/work0/seat0/1.mp3');
-    await path_mp3.getDownloadURL().then(function (url) {
-        //        console.log(url);
-        return new Promise((resolve, reject) => {
-            resolve(url);
-        });
-    }).catch(function (error) {
-        console.log("error");
-    });
 }

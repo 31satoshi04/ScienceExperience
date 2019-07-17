@@ -13,6 +13,6 @@ li {
     list-style: none;
 }
 
-#Top .downloader a{
-  margin: 0;
+a {
+  text-decoration: none;
 }
