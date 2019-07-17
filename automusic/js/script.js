@@ -15,7 +15,7 @@ decision_btn.addEventListener("click", async function () {
     // console.log(seat_number);
 
     // DBから、作成した楽曲情報を取得
-    const created_music_info = await db.collection(`work0`).doc(`seat0`).get().then(function (snapshot) {
+    const created_music_info = await db.collection(`work${class_time}`).doc(`seat${seat_number}`).get().then(function (snapshot) {
         return new Promise((resolve, reject) => {
             if (snapshot.exists) {
                 console.log(snapshot.data());
@@ -38,7 +38,7 @@ decision_btn.addEventListener("click", async function () {
         console.log("loop");
         console.log(card_info);
 
-        storage.ref('MP3/work0/seat0/1.mp3').getDownloadURL().then(function (url) {
+        storage.ref(`MP3/work${class_time}/seat${seat_number}/1.mp3`).getDownloadURL().then(function (url) {
             console.log(url);
             music_list_DOM += createMuscListDOM(card_info, url);
         }).then(function () {
