@@ -14,7 +14,7 @@ decision_btn.addEventListener("click", async function () {
     
     // await music いんふぉ
  const music_info_ref =  db.collection(`work0`).doc(`seat0`);
- const created_music_info =  await music_info_ref.onSnapshot(async function (snapshot) {
+ const created_music_info =  await music_info_ref.onSnapshot( function (snapshot) {
         return new Promise((resolve, reject) =>{
             
         if (snapshot.exists) {
