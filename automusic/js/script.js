@@ -10,7 +10,7 @@ decision_btn.addEventListener("click", async function () {
     const seat_number = document.querySelector('.seat-number select').value;
 
     // DBから、作成した楽曲情報を取得
-    const created_music_info = await db.collection(`work0`).doc(`seat0`).get().then(function (snapshot) {
+    const created_music_info = await db.collection(`work${class_time}`).doc(`seat${seat_number}`).get().then(function (snapshot) {
         return new Promise((resolve, reject) => {
             if (snapshot.exists) {
                 resolve(snapshot.data());
