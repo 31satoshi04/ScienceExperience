@@ -30,8 +30,7 @@ decision_btn.addEventListener("click", async function () {
     Object.values(created_music_info)[0].forEach(async function (card_info, index) {
         const song_tone = card_info.song_tone;
         console.log(index);
-        // storage.ref(`MP3/work${class_time}/seat${seat_number}/${index}.mp3`).getDownloadURL().then(function (url) {
-        storage.ref(`MP3/work0/seat0/1.mp3`).getDownloadURL().then(function (url) {
+        storage.ref(`MP3/work${class_time}/seat${seat_number}/${index}.mp3`).getDownloadURL().then(function (url) {
             music_list_DOM = createMuscListDOM(card_info, url);
         }).then(function () {
             const ul = document.querySelector(`#Top ul`)
@@ -63,6 +62,7 @@ function createMuscListDOM(music_info, mp3_url) {
     let card_elements = ``;
     const song_name = music_info.song_name;
     const used_song_list = music_info.used_song;
+    console.log(mp3_url);
 
     // DOM生成
     card_elements = `
