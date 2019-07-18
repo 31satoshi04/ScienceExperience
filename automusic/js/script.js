@@ -27,10 +27,10 @@ decision_btn.addEventListener("click", async function () {
 
     // DOM作成
     let music_list_DOM = '';
-    Object.values(created_music_info)[0].forEach(async function (card_info, index) {
+    Object.values(created_music_info)[0].forEach(async function (card_info) {
         const song_tone = card_info.song_tone;
-        console.log(index);
-        storage.ref(`MP3/work${class_time}/seat${seat_number}/${index}.mp3`).getDownloadURL().then(function (url) {
+        const song_id = card_info.song_id;
+        storage.ref(`MP3/work${class_time}/seat${seat_number}/${song_id}.mp3`).getDownloadURL().then(function (url) {
             music_list_DOM = createMuscListDOM(card_info, url);
         }).then(function () {
             const ul = document.querySelector(`#Top ul`)
@@ -68,7 +68,7 @@ function createMuscListDOM(music_info, mp3_url) {
     card_elements = `
       <h1>${song_name}</h1>
       <div class="music-player">
-        <audio controls src="${mp3_url}" controlslist="nodownload"></audio>
+        <audio controls src="${mp3_url}"></audio>
       </div>
       <div class="music-elements">
         <div class="music-info">
@@ -83,7 +83,7 @@ function createMuscListDOM(music_info, mp3_url) {
             <img src="./img/PDF_icon.svg">
             <p>PDF</p>
           </a>
-          <a id="download-music-btn" href="${mp3_url}">
+          <a type="image/png" id="download-music-btn" href="${mp3_url}" download>
             <img src="./img/download_icon.svg">
             <p>MP3</p>
           </a>

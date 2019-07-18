@@ -125,13 +125,14 @@ h1 {
 #top .card h1 {
     font-weight: normal;
     color: #383839;
-    margin: 0 auto;
+    margin-left: 15px;
+    margin-bottom: 0;
 }
 
 #Top .card {
     width: 300px;
     height: 230px;
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 15px 13px;
     box-shadow: 0 12px 26px 2px #ddd;
     animation: fade-in .5s;
@@ -151,7 +152,7 @@ h1 {
 
 #Top .music-player audio {
     display: block;
-    width: 90%;
+    width: 100%;
     height: 50px;
     margin: 10px auto 0;
 }
@@ -167,6 +168,7 @@ h1 {
 
 #Top .music-info p {
     font-size: 14px;
+    margin-left: 5px;
 }
 
 
