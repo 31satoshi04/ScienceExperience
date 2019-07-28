@@ -65,11 +65,15 @@ decision_btn.addEventListener("click", async function () {
         storage.ref(`PDF/work${class_time}/seat${seat_number}/${song_id}.pdf`).getDownloadURL().then(function (url) {
             const PDF_downloader_btn = document.getElementById(`download-musical-score${song_id}`);
             PDF_downloader_btn.addEventListener("click", function (event) {
+
               PDF_downloader_btn.setAttribute('href', `${url}`);
               PDF_downloader_btn.setAttribute('download', `${song_name}`);
             });
           }).catch(function (error) {
             const PDF_downloader_btn = document.getElementById(`download-musical-score${song_id}`);
+            PDF_downloader_btn.addEventListener("click",function (event) {
+              event.preventDefault();//cssのpointer-events:noneはhoverが打ち消されるためこちらを採用
+            })
             const nothing_PDF = document.querySelector(`#download-musical-score${song_id} img`);
             nothing_PDF.src = "../img/nothing_file.svg";
             PDF_downloader_btn.classList.add(`nothing_PDF`);
