@@ -105,7 +105,7 @@ function createMuscListDOM(music_info) {
   card_elements = `
       <h1>${song_name}</h1>
       <div class="music-player">
-        <audio controls src="${mp3_url}"></audio>
+        <audio controls src="${mp3_url}" controlslist="nodownload" ></audio>
       </div>
       <div class="music-elements">
         <div class="music-info">
