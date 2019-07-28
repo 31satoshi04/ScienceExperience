@@ -218,6 +218,23 @@ h1 {
     opacity: 0.6;
 }
 
+#Top .nothing_PDF:hover{
+    cursor: not-allowed;
+}
+
+#Top .nothing_PDF p{
+    opacity:0.2;
+}
+
+#Top .nothing_PDF{
+    margin-left: 6px;
+}
+
+#Top .nothing_PDF img{
+    opacity:0.2;
+    transform: scaleY(0.875);
+}
+
 #Top .downloader a + a {
     margin-left: 20px;
 }
