@@ -44,15 +44,10 @@ decision_btn.addEventListener("click", async function () {
       ul.appendChild(cards);
       const mp3_download_btn = document.getElementById("download-music-btn");
       mp3_download_btn.addEventListener("click", function (event) {
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'blob';
-        xhr.onload = function (event) {
-          const blob = xhr.response;
-        };
-        xhr.open('GET', mp3_url);
-        xhr.send();
-        console.log("Downloadなう");
         event.preventDefault();
+        var blob = new Blob([mp3_url], {type: "audio/mp3"});
+        saveAs(blob, 'test.mp3');
+        console.log("Downloadなう");
       });
     });
   })
